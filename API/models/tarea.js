@@ -4,12 +4,12 @@ const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
 
-const TareaSchema = Schema({
+const TareaSchema = new Schema({
     materia: String,
     uv: String,
     descripcion: String
 })
 
-module.exports = mongoose.model("tarea", TareaSchema)
+module.exports = mongoose.model("Tarea", TareaSchema)
 
 //package.json "start": "node ./bin/www"

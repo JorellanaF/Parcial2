@@ -5,9 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/tarea');
+var tareasRouter = require('./routes/tarea');
 
 var app = express();
+const mongoose = require("mongoose")
+const config = require("./config")
+
+mongoose.connect(config.db, { useNewUrlParser: true }, (err) =>{
+  if(err){
+    console.log(`Error al conectarse a la base de datos: ${err}`)
+  }
+  console.log("Conectado a la base")
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,7 +29,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/tarea', tareasRouter);
+app.use('/', tareasRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
