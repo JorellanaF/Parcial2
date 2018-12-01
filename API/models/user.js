@@ -11,3 +11,5 @@ const UserSchema = Schema({
 })
 
 module.exports = user
+
+//package.json "start": "node ./bin/www"
