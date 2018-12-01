@@ -1,5 +1,17 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="row titulo m-0") 
+    i(class="fab fa-accessible-icon icono col-md-2")
+    h1(class="col-md-10") Administrador de tareas
+  form()
+    div(class="row")
+      input(type="text" , placeholder="Materia", class="col-md-2 mr-1" formGroup="materia")
+      input(type="text" , placeholder="UV", class="col-md-2 mr-1" formGroup="uv")
+      input(type="text" , placeholder="Descripcion", class="col-md-2 mr-1" formGroup="descripcion")
+      button(class="btn btn-primary col-2" onClick="onSubmit") Guardar
+  div(class="container m-0")
+    ul(class="row")
+      li(class="col-md-2" style="list-style: none") #
+      li(class="col-md-2" style="list-style: none") Materia
+      li(class="col-md-2" style="list-style: none") UV
+      li(class="col-md-2" style="list-style: none") Descripcion

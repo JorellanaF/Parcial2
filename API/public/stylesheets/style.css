@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+* {
+  width: 100%;
+  margin: auto;
+  padding: 0%;
+}
+
+.icono {
+  width: 100px;
+  height: 100px;
+}
+
+div .titulo *{
+  margin: 0%;
+  padding: 0%;
+}
