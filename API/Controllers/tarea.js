@@ -21,8 +21,8 @@ function getTarea(req,res){
         if(err){
             return res.status(500).send({message: `Error del servidor al mandar la pedicion: ${err}`})
         }
-        if(!Tarea){
-            return res.status(4040).send({message: "No existe la tarea"})
+        if(!tareaId){
+            return res.status(404).send({message: "No existe la tarea"})
         }
         res.status(200).send({Tarea: Tarea})
     })
@@ -35,11 +35,12 @@ function saveTarea(req,res){
         uv: req.body.uv,
         descripcion: req.body.descripcion
     })
-    tarea.save((err,Tarea) => {
+    console.log(tarea)
+    tarea.save((err,tarea) => {
         if(err){
             return res.status(500).send({message: `Error del servidor al mandar la pedicion: ${err}`})
         }
-        res.status(200).send({Tarea: Tarea})
+        res.status(200).send({tarea: tarea})
     })
 }
 

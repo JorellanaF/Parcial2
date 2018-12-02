@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,9 +13,15 @@ a {
   padding: 0%;
 }
 
-.icono {
-  width: 100px;
-  height: 100px;
+i {
+  margin: 0%;
+  text-align: end;
+  padding-top: 1em;
+}
+
+.fas .fa-ghost{
+  width: 400px;
+  height: 400px;
 }
 
 div .titulo *{

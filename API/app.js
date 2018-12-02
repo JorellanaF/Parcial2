@@ -13,7 +13,7 @@ const config = require("./config")
 
 mongoose.connect(config.db, { useNewUrlParser: true }, (err) =>{
   if(err){
-    console.log(`Error al conectarse a la base de datos: ${err}`)
+    return console.log(`Error al conectarse a la base de datos: ${err}`)
   }
   console.log("Conectado a la base")
 })
@@ -30,7 +30,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/tarea', tareasRouter);
-app.use('/', tareasRouter)
+app.use('/',tareasRouter);
+
+/*app.get('/tarea', tareasRouter);
+app.get('/tarea/:tareaId', tareasRouter);
+app.post('/', tareasRouter);
+app.put('/tarea/:tareaId', tareasRouter);
+app.delete('/tarea/:tareaId', tareasRouter);*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

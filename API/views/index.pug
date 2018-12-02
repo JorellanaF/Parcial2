@@ -1,17 +1,21 @@
 extends layout
 block content
-  div(class="row titulo m-0") 
-    i(class="fab fa-accessible-icon icono col-md-2")
-    h1(class="col-md-10") Administrador de tareas
-  form()
-    div(class="row")
-      input(type="text" , placeholder="Materia", class="col-md-2 mr-1" formGroup="materia")
-      input(type="text" , placeholder="UV", class="col-md-2 mr-1" formGroup="uv")
-      input(type="text" , placeholder="Descripcion", class="col-md-2 mr-1" formGroup="descripcion")
-      button(class="btn btn-primary col-2" onClick="onSubmit") Guardar
-  div(class="container m-0")
-    ul(class="row")
+  div(class="row titulo m-0" style="background-color: #0065ffce; padding: 1em") 
+    i(class="fas fa-ghost icono col-md-2")
+    h1(class="col-md-10") Administrador de Post de Facebook
+  form(class="col-md-14" style="padding: 4em ; background-color: #e5eaee")
+    div(class="row" ngForm="formM")
+      input(type="text" , placeholder="Nombre", class="col-md-2 mr-4 ml-5" formGroup="nombre")
+      input(type="text" , placeholder="Descripcion", class="col-md-2 mr-4" formGroup="descripcion")
+      input(type="text" , placeholder="Reaccion", class="col-md-2 mr-4" formGroup="reaccion")
+      button(class="btn btn-primary col-md-4" onClick="onSubmit") Guardar
+  div(class="cont" style="margin: 0px; background-color: #b4e8f7")
+    ul(class="row" style="padding: 2em")
       li(class="col-md-2" style="list-style: none") #
       li(class="col-md-2" style="list-style: none") Materia
       li(class="col-md-2" style="list-style: none") UV
       li(class="col-md-2" style="list-style: none") Descripcion
+    td(class="row" style="padding: 2em") 
+      tr(class="col-md-3") {{this.formM.nombre}}
+      tr(class="col-md-3") {{this.formM.descripcion}}
+      tr(class="col-md-3") {{this.formM.reaccion}}
