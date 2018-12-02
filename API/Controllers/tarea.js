@@ -31,9 +31,9 @@ function getTarea(req,res){
 function saveTarea(req,res){
     console.log(req.body)
     let tarea = new Tarea({
-        materia: req.body.materia,
-        uv: req.body.uv,
-        descripcion: req.body.descripcion
+        nombre: req.body.nombre,
+        descripcion: req.body.udescripcionv,
+        reaccion: req.body.reaccion
     })
     console.log(tarea)
     tarea.save((err,tarea) => {
@@ -47,9 +47,9 @@ function saveTarea(req,res){
 function updateTarea(req, res){
     let tareaId = req.params.tareaId
     let nuevo = {
-        materia: req.body.materia,
-        uv: req.body.uv,
-        descripcion: req.body.descripcion
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        reaccion: req.body.reaccion
     }
     Tarea.findByIdAndUpdate(tareaId, nuevo, (err, Tarea) => {
         if(err){

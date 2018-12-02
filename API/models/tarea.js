@@ -5,9 +5,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const TareaSchema = new Schema({
-    materia: String,
-    uv: String,
-    descripcion: String
+    nombre: String,
+    descripcion: String,
+    reaccion: { type: Number, default: 0}
 })
 
 module.exports = mongoose.model("Tarea", TareaSchema)
